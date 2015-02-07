@@ -23,6 +23,7 @@ gem 'rails_admin'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 gem "paperclip", "~> 4.2"
+gem 'rails_12factor', group: :production
 gem 'aws-sdk'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'

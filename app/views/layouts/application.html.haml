@@ -10,7 +10,8 @@
   %body
     = render "layouts/header"
     = render "layouts/alerts"
-    #main-content.row.full-min-height
+    #main-content.full-min-height
+    
       = yield
     %footer.row
       .large-12.columns

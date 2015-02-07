@@ -5,10 +5,14 @@ class ProductsController < ApplicationController
   def index
     @products = Product.all
   end
+  def home
+    
+  end
 
   # GET /products/1
   # GET /products/1.json
   def show
+    @product = Product.find(params[:id])
   end
 
  
@@ -20,6 +24,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:name, :description, :price, :category_id)
+      params.require(:product).permit(:name, :description, :price)
     end
 end

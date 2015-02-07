@@ -26,4 +26,13 @@ Rails.application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_host_name => 's3.amazonaws.com',
+    :s3_credentials => {
+      :bucket => 'completestriker',
+      :access_key_id => 'AKIAJHGPFINVMX3VUYLQ',
+      :secret_access_key => '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'
+    }
+  }
 end

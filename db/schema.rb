@@ -21,7 +21,10 @@ ActiveRecord::Schema.define(version: 20150203015356) do
   end
 
   create_table "images", force: true do |t|
-    t.string   "image_url"
+    t.string   "img_file_name"
+    t.string   "img_content_type"
+    t.integer  "img_file_size"
+    t.datetime "img_updated_at"
     t.integer  "product_id"
     t.string   "title"
     t.text     "description"
@@ -34,6 +37,10 @@ ActiveRecord::Schema.define(version: 20150203015356) do
     t.text     "description"
     t.float    "price"
     t.integer  "category_id"
+    t.string   "prod_img_file_name"
+    t.string   "prod_img_content_type"
+    t.integer  "prod_img_file_size"
+    t.datetime "prod_img_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

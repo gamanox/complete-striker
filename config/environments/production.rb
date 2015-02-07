@@ -38,7 +38,15 @@ Rails.application.configure do
   # Specifies the header that your server uses for sending files.
   # config.action_dispatch.x_sendfile_header = "X-Sendfile" # for apache
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for nginx
-
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_host_name => 's3.amazonaws.com',
+    :s3_credentials => {
+      :bucket => 'completestriker',
+      :access_key_id => 'AKIAJHGPFINVMX3VUYLQ',
+      :secret_access_key => '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'
+    }
+  }
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true
 

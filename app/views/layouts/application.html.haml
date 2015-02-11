@@ -8,13 +8,15 @@
     = javascript_include_tag "vendor/modernizr"
     = csrf_meta_tags
   %body
-    = render "layouts/header"
-    = render "layouts/alerts"
-    #main-content.full-min-height
-    
-      = yield
-    %footer.row
-      .large-12.columns
-        %hr/
-        %p © Complete Striker 2015
-    = javascript_include_tag "application"
+
+        
+    .off-canvas-wrap{"data-offcanvas" => ""}
+      .inner-wrap   
+        = render "layouts/header"
+        = render "layouts/alerts"
+        #main-content.full-min-height
+        
+          = yield
+        %a.exit-off-canvas{:href => "#"}
+        = render "layouts/footer"
+        = javascript_include_tag "application"

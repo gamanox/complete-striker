@@ -64,7 +64,10 @@ body
 	position: relative
 
 #header
-	background-color: transparent
+	background-image: url("shadow.png")
+	background-position: 50% 0%
+	background-repeat: no-repeat
+	background-size: contain
 	position: absolute
 	z-index: 10
 	top: 0
@@ -79,6 +82,12 @@ body
 		float: left
 		width: 30%
 		height: 100px
+		a
+			p
+				+normal
+				font-size: 18px
+				color: #fff
+				padding-top: 7px
 	.center
 		width: 40%
 		float: left
@@ -117,6 +126,18 @@ body
 		width: 30%
 		float: left
 		height: 100px
+		ul
+			list-style: none
+			li
+				float: right
+				margin-left: 15px
+				a
+					p
+						color: #fff
+						+normal
+						font-size: 16px
+						padding-top: 7px
+
 .seccion
 	padding-top: 100px
 
@@ -125,9 +146,66 @@ body
 	position: relative
 	min-height: 1000px
 	width: 100%
-	background-image: url("home-bg-left.jpg")
-	background-size: cover
-	background-repeat: no-repeat
+	padding-top: 0
+
+	
+	.logo-cs
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		width: 156px
+		height: 181px
+		margin: auto
+	.logo-left
+		position: absolute
+		top: 50%
+		right: 50%
+		width: 388px
+		height: 163px
+		margin-right: 150px
+		margin-top: -81px 
+		
+	.logo-right
+		position: absolute
+		top: 50%
+		left: 50%
+		width: 263px
+		height: 118px
+		margin-left: 150px
+		margin-top: -59px
+	.logomarca
+		position: absolute
+		+prefix(transform, skewx(-60deg))
+		float: left
+		width: 1920px
+		right: 50%
+		height: 1000px
+		display: block
+		overflow: hidden
+
+		a
+			position: absolute
+			width: 100%
+			height: 100%
+			display: block
+			background-image: url("home-bg-left.jpg")
+			background-size: cover
+			background-position-x: middle
+			background-position-y: bottom
+			background-repeat: no-repeat
+			right: -50%
+			+prefix(transform, skewx(60deg))
+
+		&.logomarca1
+			a
+				background-image: url("home-bg-right.jpg")
+				right: auto
+				left: -50%
+			left: 50%
+			right: auto
+
 
 #products
 	position: relative
@@ -140,9 +218,10 @@ body
 		width: 100%
 		list-style: none
 		li.product
-			float: left
 			display: block
 			width: 248px
+			margin-left: auto
+			margin-right: auto
 			a
 				position: relative
 				display: block
@@ -161,8 +240,147 @@ body
 					+transition(all 200ms ease)
 				&:hover
 					span
-
+						
 						+prefix(transform, scale(1, 1))
-				
+				p
+					text-align: center
+					color: #fff
+					+bold
+					font-size: 18px
+					span
+						+normal
+#product
+	width: 100%
+	position: relative
+	background-color: #FFF
+	.category-logo
+		width: 248px
+		height: 162px
+		margin-left: auto
+		margin-right: auto
+		margin-top: -70px
+	ul.products
+		width: 100%
+		list-style: none
+		li.product
+			display: block
+			width: 248px
+			padding-top: 20px
+			padding-bottom: 20px
+			margin-left: auto
+			margin-right: auto
+			a
+				position: relative
+				display: block
+				width: 248px
+				span
+					background-image: url("product-over_248x286.png")
+					width: 248px
+					height: 286px
+					position: absolute
+					top: 0
+					left: 0
+					display: block
+					+prefix(transform, scale(0, 0))
+					+prefix(transform-origin, 50% 50%)
 
-	
+					+transition(all 200ms ease)
+				&:hover
+					span
+						
+						+prefix(transform, scale(1, 1))
+				p
+					text-align: center
+					color: #000
+					+bold
+					font-size: 18px
+					span
+						+normal
+	.productfull
+		width: 100%
+		height: 580px
+		background-repeat: no-repeat
+		background-position: 50%	0%
+		background-size: cover	
+		.prod-data
+			padding-top: 200px
+			p
+				color: #fff
+			p.name
+				+bold
+				font-size: 38px
+				margin: 0
+			p.description
+				+normal
+				font-size: 20px
+				line-height: 20px
+			p.price
+				+normal
+				font-size: 38px
+				margin: 0
+			select
+				background: transparent
+				background-image: url("dropdown.png")
+				background-size: 25%
+				background-repeat: no-repeat
+				background-position: 100% 0%
+				border: 2px solid #fff
+				color: #fff
+				padding: 5px
+				+normal
+				font-size: 20px
+				line-height: 22px
+				option
+					color: #000
+			.socialbtns
+				margin-top: 20px
+				a
+					width: 17px
+					height: 17px
+					float: left
+					margin-left: 20px
+					background-repeat: no-repeat
+					background-position: 50% 50%
+					background-size: contain
+					&:first-child
+						margin-left: 0
+					&.fb
+						background-image: url("share-facebook.png")
+					&.tw
+						background-image: url("share-twitter.png")
+					&.pin
+						background-image: url("share-pinterest.png")
+					&.mail
+						background-image: url("share-mail.png")
+
+#about
+	background-image: url("about-bg.jpg")
+	background-repeat: no-repeat
+	background-position: 50% 0%
+	background-size: cover
+	width: 100%
+	padding-top: 170px
+	p.copy
+		+normal
+		color: #fff
+		text-align: center
+		font-size: 18px
+		line-height: 20px
+		margin-top: 40px
+	p.final
+		margin-top: 250px
+footer
+	width: 100%
+	height: 497px
+	background-image: url("footerbg.jpg")
+	background-repeat: no-repeat
+	background-size: cover
+	a
+		text-decoration: none
+		color: #fff
+		&:hover
+			color: #d1d1d1
+	p
+		text-align: center
+		margin-top: 100px
+		&:first-child

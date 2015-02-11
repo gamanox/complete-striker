@@ -3,13 +3,14 @@
 
     %ul.products
       - @products.each do |product|
-        %li.product
-          = link_to product do
-            %span
-            %p
-              = image_tag product.prod_img.url(:square)
-              <br/>#{product.name}
-              <br/>€ #{product.price}
+        .large-4
+          %li.product
+            = link_to product do
+              %span
+              %p
+                = image_tag product.prod_img.url(:square)
+                <br/>#{product.name}
+                <br/>€ #{product.price}
 
 
             

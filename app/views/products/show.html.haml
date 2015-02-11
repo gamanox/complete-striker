@@ -1,15 +1,36 @@
-%p#notice= notice
-%p
-  %strong Name:
-  = @product.name
-%p
-  %strong Description:
-  = @product.description
-%p
-  %strong Price:
-  = @product.price
-%p
-  %strong Category:
-  = @product.category_id
+#product
+	.productfull{:style => "background-image: url(#{@product.images.first.img.url(:full)})"}
+		.row
+			.large-3.prod-data
+				%p.name
+					= @product.name
+				%p.description
+					= @product.description
+				%p.price
+					€#{@product.price}
+				%form{:action => ""}
+					%select#prodsize{:name => ""}
+						%option{:value => "small"} Small
+						%option{:value => "medium"} Medium
+						%option{:value => "large"} Large
+						%option{:value => "extra"} Extra
+				.socialbtns
+					%a{:href => "#", :class => "fb"}
+					%a{:href => "#", :class => "tw"}
+					%a{:href => "#", :class => "pin"}
+					%a{:href => "#", :class => "mail"}
+	.row
+		.category-logo
+			= image_tag "category-#{@category.name.downcase}.png"
+		%ul.products
+			-@products.each do |catprod|
+				.large-4
+					%li.product
+						= link_to catprod do
+							%span
+							%p
+								= image_tag catprod.prod_img.url(:square)
+								<br/>#{catprod.name}
+								<br/>€ #{catprod.price}
 
-= image_tag @product.prod_img.url(:square)
+

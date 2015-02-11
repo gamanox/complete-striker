@@ -8,11 +8,16 @@ class ProductsController < ApplicationController
   def home
     
   end
+  def about
+    
+  end
 
   # GET /products/1
   # GET /products/1.json
   def show
     @product = Product.find(params[:id])
+    @category = Category.find(@product.category)
+    @products = @category.products
   end
 
  

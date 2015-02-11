@@ -1,28 +1,48 @@
+%aside.left-off-canvas-menu
+  %ul.off-canvas-list
+    %li
+      %label Complete Striker
+    %li
+      = link_to "Home", "/"
+      
+      
+    %li
+      = link_to "Shop", "/products"
+      
+    %li
+      = link_to "About", "/about"
+
+    %li
+      = link_to "Contact", "/about"
+    
 #header
   .row.header-cont
     .left
+      %a.left-off-canvas-toggle.menu-icon{:href => "#"}
+        %span
+        %p MENU
     .center
       %p.logo Complete Striker
 
       %ul.menu
-        %li
-          %a{:href => "#"} Home
-          
-        %li
-          = link_to "Shop", :controller => "products", :action => "index"
-          
-        %li
-          %a{:href => "#"} About
+        
+    .right
+      %ul
+        %li.cart
 
-        %li
-          %a{:href => "#"} Contact
+
         - if signed_in?
-          %li= link_to current_user.email, edit_user_registration_path
-          %LI= link_to "Logout", destroy_user_session_path, method: :delete
+          %li
+            = link_to edit_user_registration_path do
+              %p #{current_user.email}
+          %li
+            = link_to destroy_user_session_path, method: :delete do
+              %p LOGOUT
         - else
 
-          %li= link_to "Register", new_user_registration_path
-          %li= link_to "Login", new_user_session_path
-    .right
-
-  
+          %li
+            = link_to new_user_registration_path do
+              %p REGISTER
+          %li
+            = link_to new_user_session_path do
+              %p LOGIN
